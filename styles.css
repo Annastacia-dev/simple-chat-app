@@ -1,0 +1,96 @@
+/* Updated CSS (styles.css) */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #111b21;
+}
+
+.chat-container {
+  height: 80vh; /* Set the height of the container to 80vh */
+  max-width: 360px; /* Adjust the width as needed */
+  border: 1px solid #ccc;
+  background-color: #111b21;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Arrange the messages and input vertically */
+}
+
+.chat-messages {
+  flex: 1; /* Expand to fill available space */
+  overflow-y: scroll; /* Use scroll for vertical overflow */
+  padding: 10px;
+  display: flex;
+  flex-direction: column-reverse; /* Display messages in reverse order */
+}
+
+.message {
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  max-width: 70%; /* Maximum width of each message */
+}
+
+.message.sent {
+  background-color: #00a884;
+  color: #fff;
+  text-align: right;
+  align-self: flex-end; /* Sent messages on the right side */
+}
+
+.message.received {
+  background-color: #0a1014;
+  color: #fff;
+  text-align: left;
+  align-self: flex-start; /* Received messages on the left side */
+}
+
+/* Hide the scrollbar for mobile devices */
+@media (max-width: 767px) {
+  .chat-messages::-webkit-scrollbar {
+      width: 0; /* Hide the scrollbar */
+  }
+}
+
+/* Make the scrollbar thinner for desktops */
+@media (min-width: 768px) {
+  .chat-messages::-webkit-scrollbar {
+      width: 0.2rem; /* Set the width of the scrollbar (adjust as needed) */
+  }
+
+  .chat-messages::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.5); /* Set the color of the scrollbar thumb */
+      border-radius: 5px; /* Round the scrollbar thumb corners */
+  }
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.chat-input input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #293842;
+  color: #fff;
+}
+
+.chat-input button {
+  padding: 8px 15px;
+  background-color: #111b21;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
